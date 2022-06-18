@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="./assets/css/style.css"
-    <title>Uni-QOL</title>
+    <link rel="stylesheet" src="./assets/css/style.css">
+    <title> Uni-QOL </title>
 </head>
 <body>
-        <label for="City">City Name</label>
-        <input type= "text" class="city" autocomplete="on">    
-
+    <header>
+        <h1>CITY INFO!</h1>        
+    </header>
+        <div class="Input Field">
+            <h3 class="card-header text-uppercase">Search For City!</h3>
+            <form id="city-form">
+                <label for="city">City</label>
+                <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn">Get City Information</button>
+            </form>
+        </div>    
+        <div>
+            <h2 class="subtitle">Showing City Data For: <span id="searched-city"></span></h2>
+            <div id="info-container" class="list-group">
+            </div>
+        </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
