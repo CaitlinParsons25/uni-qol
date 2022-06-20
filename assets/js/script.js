@@ -24,7 +24,7 @@ var CityFormHandler = function(event) {
 var getCityInfo = function(input) {
   // format the github api url
   var apiUrl = 'https://api.teleport.org/api/cities/?search=' + input + '&embed=city%3Asearch-results%2Fcity%3Aitem%2Fcity%3Aurbanarea%2Fua%3Ascores'
-    console.log(apiUrl)
+    // console.log(apiUrl)
   // make a get request to url
   fetch(apiUrl)
     .then(function(response) {
@@ -34,8 +34,9 @@ var getCityInfo = function(input) {
         // console.log(response);
         response.json().then(function(data) {
         //   console.log(data);
-          urbanareaapi = data._embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"]
+          urbanareaapi = data._embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"].href
           console.log(urbanareaapi)
+          return(urbanareaapi)
         //   displayScore(data, input);
         });
       } else {
@@ -49,34 +50,22 @@ var getCityInfo = function(input) {
 
 console.log(urbanareaapi)
 
-var displayScores = function(scores, searchTerm) {
-  // check if api returned any repos
-  if (scores.length === 0) {
-    cityInfoCont.textContent = 'No City Information found.';
-    return;
-  }
-
-  repoSearchTerm.textContent = searchTerm;
-
-
-};
+// fetch(urbanareaapi)
+//     .then(function(response) {
+    
+//       if (response.ok) {
+//         console.log(response);
+//         response.json().then(function(data) {
+//         });
+//       } else {
+//         alert('Error: City Not Found');
+//       }
+//     })
+//     .catch(function(error) {
+//       alert('Unable to connect to Teleport API');
+//     });
 
 // add event listeners to forms
 CityForm.addEventListener('submit', CityFormHandler);
 
-// _embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"]
 
-// var getCities = function(){
-//     fetch("https://api.teleport.org/api/").then(function(response) {
-//         response.json().then(function(data) {
-//           console.log(data);
-//         });
-//     })
-// };
-// getCities()
-// console.log(getCities)
-// var getusercity = function() {
-//     var apiurl = "https://api.teleport.org/api/cities/?search=" + city + {
-        
-//     }
-// }
