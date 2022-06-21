@@ -1,20 +1,21 @@
-var CityForm = document.querySelector('#city-form');
-var CityInput = document.querySelector('#city');
+var cityForm = document.querySelector('#city-form');
+// local storage from cityInput (city input,)
+var cityInput = document.querySelector('#city');
 var cityInfoCont = document.querySelector('#info-container');
 
-let urbanareaapi = ""
+let urbanAreaApi = ""
 let summary = ""
 
-var CityFormHandler = function(event) {
+var cityFormHandler = function(event) {
   // prevent page from refreshing
   event.preventDefault();
   // get value from input element
-  var city = CityInput.value.trim().toLowerCase();
+  var city = cityInput.value.trim().toLowerCase();
   if (city) {
     getCityInfo(city);
     // clear old content
     cityInfoCont.textContent = '';
-    CityInput.value = '';
+    cityInput.value = '';
   } else {
     alert('Please enter a City');
   }
@@ -33,9 +34,9 @@ var getCityInfo = function(input) {
         // console.log(response);
         response.json().then(function(data) {
           // console.log(data);
-          urbanareaapi = data._embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"].href + 'scores/'
-          console.log(urbanareaapi)
-          globalThis.urbanareaapi = urbanareaapi 
+          urbanAreaApi = data._embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"].href + 'scores/'
+          console.log(urbanAreaApi)
+          globalThis.urbanAreaApi = urbanAreaApi 
         urbanApiFetch()
         });
       } else {
@@ -48,12 +49,13 @@ var getCityInfo = function(input) {
 };
 
 var urbanApiFetch = function(){
-fetch(urbanareaapi)
+fetch(urbanAreaApi)
     .then(function(response) {    
       if (response.ok) {
         console.log(response);
         response.json().then(function(data) {
         console.log(data.summary)
+        // local storage for summary
         summary = data.summary
         cityInfoCont.innerHTML = summary        
         });
@@ -67,6 +69,7 @@ fetch(urbanareaapi)
 }
 
 // add event listeners to forms
-CityForm.addEventListener('submit', CityFormHandler);
+cityForm.addEventListener('submit', cityFormHandler);
 
 
+// Garry - work on local storage and work on some spelling errors.
