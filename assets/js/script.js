@@ -81,3 +81,5 @@ var getWeather = function () {
 };
 
 getWeather();
+
+// weather API code ends

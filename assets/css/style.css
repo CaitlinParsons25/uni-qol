@@ -1,10 +1,15 @@
 body {
     background-image: url(/assets/images/img-bg.jpg);
 }
-main {
+
+h1 {
+    text-align: center;
+    padding: 12px;
+}
+.form-container {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .form-content {
@@ -32,4 +37,16 @@ h1 {
 button{
     background-color: white;
     padding: 10px;
+}
+
+.cell {
+    border:solid white 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-response, .qol-container, .weather-container {
+        display: flex;
+        flex-wrap: wrap;
+        color: aquamarine;
+    }
 }

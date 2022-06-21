@@ -12,32 +12,35 @@
     <header>
         <h1>Quality of Life + Weather</h1>
     </header>
-    <form>
-        <div class="form-content">
-            <h1>Please enter a city:</h1>
-            <input placeholder="Los Angeles">
-            <button type="submit" class="submit" id="submit">Search</button>
+    <div class="container-all">
+        <div class="form-container">
+            <form>
+                <div class="form-content">
+                    <h1>Please enter a city:</h1>
+                    <input placeholder="Los Angeles">
+                    <button type="submit" class="submit" id="submit">Search</button>
+                </div>
+            </form>
         </div>
-    </form>
-    <div class="hidden">
-        <div class="qol-container">
-            <h2>Quality of Life</h2>
+        <div class="hidden search-response grid-x grid-padding-x align-spaced">
+            <div class="qol-container cell small-12 medium-5 large-5">
+                <h2>Quality of Life</h2>
 
-        </div>
-        <div class="weather-container">
-            <h2>Weather</h2>
-            <div id="day">
-                <h1 id="date1"></h1>
-                <p id="temp1-min"></p>
-                <p id="temp1-max"></p>
-                <p id="condition1"></p>
-             </div>
+            </div>
+            <div class="weather-container cell small-12 medium-5 large-5">
+                <h2>Weather</h2>
+                <div id="day">
+                    <h1 id="date1"></h1>
+                    <p id="temp1-min"></p>
+                    <p id="temp1-max"></p>
+                    <p id="condition1"></p>
+                </div>
+            </div>
         </div>
     </div>
-
     
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="./assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
