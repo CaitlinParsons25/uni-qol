@@ -1,9 +1,10 @@
 var CityForm = document.querySelector('#city-form');
 var CityInput = document.querySelector('#city');
 var cityInfoCont = document.querySelector('#info-container');
-var repoSearchTerm = document.querySelector('#searched-city');
+
 let urbanareaapi = ""
 let summary = ""
+
 var CityFormHandler = function(event) {
   // prevent page from refreshing
   event.preventDefault();
@@ -35,7 +36,6 @@ var getCityInfo = function(input) {
           urbanareaapi = data._embedded["city:search-results"][0]._embedded["city:item"]._links["city:urban_area"].href + 'scores/'
           console.log(urbanareaapi)
           globalThis.urbanareaapi = urbanareaapi 
-        //   displayScore(data, input);
         urbanApiFetch()
         });
       } else {
@@ -49,19 +49,14 @@ var getCityInfo = function(input) {
 
 var urbanApiFetch = function(){
 fetch(urbanareaapi)
-    .then(function(response) {
-    
+    .then(function(response) {    
       if (response.ok) {
         console.log(response);
         response.json().then(function(data) {
         console.log(data.summary)
         summary = data.summary
-        cityInfoCont.innerHTML = summary
-        
+        cityInfoCont.innerHTML = summary        
         });
-      
-      
-        
       } else {
         alert('Error: City Not Found');
       }
