@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="./assets/css/style.css">
-    <title>Uni-QOL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Quality of Life + Weather</title>
 </head>
 <body>
- 
-<script src="./assets/js/script.js"></script>
+    <header>
+        <h1>Quality of Life + Weather</h1>
+    </header>
+
+    <div class="container-all">
+        <div class="form-container">
+            <form id="city-form">
+                <div class="form-content">
+                    <h1>Please enter a city:</h1>
+                    <input name="city" id="city" type="text" autofocus="true" class="form-input" placeholder="Los Angeles">
+                    <button type="submit" class="btn" id="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="hidden search-response grid-x grid-padding-x align-spaced">
+            <div class="qol-container cell small-12 medium-5 large-5">
+                <h2 class="subtitle">Quality of Life: <span id="searched-city"></span></h2>
+                <div id="info-container" class="list-group">
+                </div>               
+
+            </div>
+            <div class="weather-container cell small-12 medium-5 large-5">
+                <h2>Weather</h2>
+                <div id="day">
+                    <h1 id="date1"></h1>
+                    <p id="temp1-min"></p>
+                    <p id="temp1-max"></p>
+                    <p id="condition1"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
