@@ -1,6 +1,7 @@
 var cityForm = document.querySelector('#city-form');
 var cityInput = document.querySelector('#city');
 var cityInfoCont = document.querySelector('#info-container');
+var enterInfo = document.querySelector("#enter");
 
 let urbanareaapi = ""
 let summary = ""
@@ -14,15 +15,14 @@ var cityFormHandler = function(event) {
   cityName = city
   if (city) {
     getCityInfo(city);
-    getWeather();
+    getWeather(cityName);
     // add localStorage
-    
-    localStorage.setItem(cityInput, cityName);
+    localStorage.setItem("cityInput", cityName);
     // clear old content
     cityInfoCont.textContent = '';
     cityInput.value = '';
   } else {
-    alert('Please enter a City');
+    enterInfo.textContent = 'PLEASE ENTER VALID CITY';
   }
 };
 
@@ -45,11 +45,11 @@ var getCityInfo = function(input) {
         urbanApiFetch()
         });
       } else {
-        alert('Error: City Not Found');
+        enterInfo.textContent = 'PLEASE ENTER VALID CITY';
       }
     })
     .catch(function(error) {
-      alert('Unable to connect to Teleport API');
+      enterInfo.textContent = 'Unable to connect to Teleport API';
     });
 };
 
@@ -64,11 +64,11 @@ fetch(urbanareaapi)
         cityInfoCont.innerHTML = summary       
         });
       } else {
-        alert('Error: City Not Found');
+        enterInfo.textContent = 'PLEASE ENTER VALID CITY';
       }
     })
     .catch(function(error) {
-      alert('Unable to connect to Teleport API');
+      enterInfo.textContent = 'Unable to connect to Teleport API';
     });
 }
 
@@ -90,23 +90,23 @@ var dayTwoTempMin = document.getElementById("temp2-min");
 var dayTwoTempMax = document.getElementById("temp2-max");
 var dayTwoCondition = document.getElementById("condition2");
 
-// day 3 variables
-var dayThreeDate = document.getElementById("date3");
-var dayThreeTempMin = document.getElementById("temp3-min");
-var dayThreeTempMax = document.getElementById("temp3-max");
-var dayThreeCondition = document.getElementById("condition3");
+// // day 3 variables
+// var dayThreeDate = document.getElementById("date3");
+// var dayThreeTempMin = document.getElementById("temp3-min");
+// var dayThreeTempMax = document.getElementById("temp3-max");
+// var dayThreeCondition = document.getElementById("condition3");
 
-// day 4 variables
-var dayFourDate = document.getElementById("date4");
-var dayFourTempMin = document.getElementById("temp4-min");
-var dayFourTempMax = document.getElementById("temp4-max");
-var dayFourCondition = document.getElementById("condition4");
+// // day 4 variables
+// var dayFourDate = document.getElementById("date4");
+// var dayFourTempMin = document.getElementById("temp4-min");
+// var dayFourTempMax = document.getElementById("temp4-max");
+// var dayFourCondition = document.getElementById("condition4");
 
-// day 5 variables
-var dayFiveDate = document.getElementById("date5");
-var dayFiveTempMin = document.getElementById("temp5-min");
-var dayFiveTempMax = document.getElementById("temp5-max");
-var dayFiveCondition = document.getElementById("condition5");
+// // day 5 variables
+// var dayFiveDate = document.getElementById("date5");
+// var dayFiveTempMin = document.getElementById("temp5-min");
+// var dayFiveTempMax = document.getElementById("temp5-max");
+// var dayFiveCondition = document.getElementById("condition5");
 
 // get weather forecast function
 var getWeather = function () {
@@ -130,34 +130,37 @@ var getWeather = function () {
                 dayTwoTempMax.textContent = "High: " + (data.list[1].main.temp_max); 
                 dayTwoCondition.textContent = (data.list[1].weather[0].description);
 
-                // day 3
-                let date3 = moment(data.list[2].dt_txt).format("MMMM DD, YYYY");
-                dayTwoDate.textContent = date3;
-                dayTwoTempMin.textContent = "Low: " + (data.list[2].main.temp_min);
-                dayTwoTempMax.textContent = "High: " + (data.list[2].main.temp_max); 
-                dayTwoCondition.textContent = (data.list[2].weather[0].description);
+                // // day 3
+                // let date3 = moment(data.list[2].dt_txt).format("MMMM DD, YYYY");
+                // dayTwoDate.textContent = date3;
+                // dayTwoTempMin.textContent = "Low: " + (data.list[2].main.temp_min);
+                // dayTwoTempMax.textContent = "High: " + (data.list[2].main.temp_max); 
+                // dayTwoCondition.textContent = (data.list[2].weather[0].description);
 
-                // day 4
-                let date4 = moment(data.list[3].dt_txt).format("MMMM DD, YYYY");
-                dayTwoDate.textContent = date4;
-                dayTwoTempMin.textContent = "Low: " + (data.list[3].main.temp_min);
-                dayTwoTempMax.textContent = "High: " + (data.list[3].main.temp_max); 
-                dayTwoCondition.textContent = (data.list[3].weather[0].description);
+                // // day 4
+                // let date4 = moment(data.list[3].dt_txt).format("MMMM DD, YYYY");
+                // dayTwoDate.textContent = date4;
+                // dayTwoTempMin.textContent = "Low: " + (data.list[3].main.temp_min);
+                // dayTwoTempMax.textContent = "High: " + (data.list[3].main.temp_max); 
+                // dayTwoCondition.textContent = (data.list[3].weather[0].description);
 
-                // day 5
-                let date5 = moment(data.list[4].dt_txt).format("MMMM DD, YYYY");
-                dayTwoDate.textContent = date5;
-                dayTwoTempMin.textContent = "Low: " + (data.list[4].main.temp_min);
-                dayTwoTempMax.textContent = "High: " + (data.list[4].main.temp_max); 
-                dayTwoCondition.textContent = (data.list[4].weather[0].description);
+                // // day 5
+                // let date5 = moment(data.list[4].dt_txt).format("MMMM DD, YYYY");
+                // dayTwoDate.textContent = date5;
+                // dayTwoTempMin.textContent = "Low: " + (data.list[4].main.temp_min);
+                // dayTwoTempMax.textContent = "High: " + (data.list[4].main.temp_max); 
+                // dayTwoCondition.textContent = (data.list[4].weather[0].description);
                 
             });
-        } else {
-            // display message "City not found; try another city."
         };
     });
 };
-
-
-
 // weather API code ends
+
+// search history function
+var getHistory = function() {
+  var history = document.getElementById("history");
+  history.innerHTML = localStorage.getItem("cityInput");
+};
+
+getHistory();
