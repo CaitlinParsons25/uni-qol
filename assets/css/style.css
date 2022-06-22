@@ -1,5 +1,5 @@
 body {
-    background-image: url(/assets/images/img-bg.jpg);
+    background-image: url("./assets/images/img-bg.jpg");
 }
 
 h1 {
