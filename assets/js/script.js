@@ -15,7 +15,7 @@ var cityFormHandler = function(event) {
   cityName = city
   if (city) {
     getCityInfo(city);
-    getWeather(Input);
+    getWeather(cityName);
     // add localStorage
     localStorage.setItem("cityInput", cityName);
     // clear old content
