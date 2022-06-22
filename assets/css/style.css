@@ -1,10 +1,21 @@
 body {
     background-image: url("../images/img-bg.jpg");
     background-size: cover;
+    background-attachment: fixed;
     color: white;
     font-family: 'Gotu', sans-serif;
 }
-
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 h1 {
     font-size: 1rem;
     text-align: center;
@@ -59,15 +70,17 @@ h2 {
     box-shadow: 0 0 30px rgb(47, 0, 255);
 }
 
-.cell {
+.qol-container, .weather-container {
     border:solid white 3px;
     font-family: 'Gotu', sans-serif;
+    margin-top: 100px;
 }
 
-@media screen and (max-width: 768px) {
-    .search-response, .qol-container, .weather-container {
-        display: flex;
-        flex-wrap: wrap;
-        color: aquamarine;
-    }
+.search-response {
+    margin-bottom: 100px;
+}
+
+footer {
+    margin: 30px;
+    font-size: 0.8rem;
 }
