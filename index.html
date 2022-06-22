@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Quality of Life + Weather</title>
 </head>
-<body>
+<body class="body">
     <video autoplay loop muted id="background-video" preload="auto" poster="/assets/images/img-bg.jpg">
         <source id="video" src="/assets/images/video.webm" type="video/webm">
     </video>
@@ -30,7 +30,7 @@
                 <h4>Previous search: <span id="history"></span></h4>
             </form>
         </div>
-        <div class="hidden search-response grid-x grid-padding-x align-spaced">
+        <div class="hidden search-response grid-x grid-padding-x align-spaced" id="hidden">
             <div class="qol-container cell small-11 medium-10 large-5">
                 <h3 class="subtitle">Quality of Life <span id="searched-city"></span></h3>
                 <div id="info-container" class="list-group">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <footer>
+    <footer id="footer">
         &copy UNI-QOL 2022
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

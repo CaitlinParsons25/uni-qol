@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 body {
     background-image: url("../images/img-bg.jpg");
     background-size: cover;
@@ -115,7 +119,16 @@ h4 {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     margin: 30px;
     font-size: 0.8rem;
     font-family: 'Gotu', sans-serif;
+}
+
+.footer-after {
+    position: relative;
+    bottom: 0;
+    left: 0;
 }

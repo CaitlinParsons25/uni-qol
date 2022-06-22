@@ -2,6 +2,9 @@ var cityForm = document.querySelector('#city-form');
 var cityInput = document.querySelector('#city');
 var cityInfoCont = document.querySelector('#info-container');
 var enterInfo = document.querySelector("#enter");
+var hidden = document.querySelector("#hidden");
+var footer = document.querySelector("#footer")
+
 
 let urbanareaapi = ""
 let summary = ""
@@ -10,6 +13,12 @@ var cityName = ""
 var cityFormHandler = function(event) {
   // prevent page from refreshing
   event.preventDefault();
+
+ // show hidden div
+ hidden.classList.remove("hidden")
+
+ // change footer position
+ footer.classList.add("footer-after")
   // get value from input element
   var city = cityInput.value.trim().toLowerCase();
   cityName = city
