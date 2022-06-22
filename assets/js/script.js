@@ -15,7 +15,7 @@ var cityFormHandler = function(event) {
   cityName = city
   if (city) {
     getCityInfo(city);
-    getWeather();
+    getWeather(Input);
     // add localStorage
     localStorage.setItem("cityInput", cityName);
     // clear old content
@@ -45,11 +45,11 @@ var getCityInfo = function(input) {
         urbanApiFetch()
         });
       } else {
-        alert('Error: City Not Found');
+        enterInfo.textContent = 'PLEASE ENTER VALID CITY';
       }
     })
     .catch(function(error) {
-      alert('Unable to connect to Teleport API');
+      enterInfo.textContent = 'Unable to connect to Teleport API';
     });
 };
 
@@ -64,11 +64,11 @@ fetch(urbanareaapi)
         cityInfoCont.innerHTML = summary       
         });
       } else {
-        alert('Error: City Not Found');
+        enterInfo.textContent = 'PLEASE ENTER VALID CITY';
       }
     })
     .catch(function(error) {
-      alert('Unable to connect to Teleport API');
+      enterInfo.textContent = 'Unable to connect to Teleport API';
     });
 }
 
