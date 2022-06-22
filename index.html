@@ -17,10 +17,11 @@
         <div class="form-container">
             <form id="city-form">
                 <div class="form-content">
-                    <h1>Please enter a city:</h1>
+                    <h1 id="enter">Please enter a city:</h1>
                     <input name="city" id="city" type="text" autofocus="true" class="form-input" placeholder="Los Angeles">
                     <button type="submit" class="btn" id="submit">Search</button>
                 </div>
+                <h6>Previous search: <span id="history"></span></h6>
             </form>
         </div>
         <div class="hidden search-response grid-x grid-padding-x align-spaced">
@@ -32,11 +33,17 @@
             </div>
             <div class="weather-container cell small-12 medium-5 large-5">
                 <h2>Weather</h2>
-                <div id="day">
+                <div class="day">
                     <h1 id="date1"></h1>
                     <p id="temp1-min"></p>
                     <p id="temp1-max"></p>
                     <p id="condition1"></p>
+                </div>
+                <div class="day">
+                    <h1 id="date2"></h1>
+                    <p id="temp2-min"></p>
+                    <p id="temp2-max"></p>
+                    <p id="condition2"></p>
                 </div>
             </div>
         </div>
