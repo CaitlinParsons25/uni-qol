@@ -1,0 +1,52 @@
+body {
+    background-image: url(/assets/images/img-bg.jpg);
+}
+
+h1 {
+    text-align: center;
+    padding: 12px;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 400px;
+    height: 200px;
+    padding: 10px 20px;
+    border: solid rgb(255, 255, 255) 5px;
+}
+
+textarea {
+    width: 300px;
+    height: auto
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    
+}
+button{
+    background-color: white;
+    padding: 10px;
+}
+
+.cell {
+    border:solid white 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-response, .qol-container, .weather-container {
+        display: flex;
+        flex-wrap: wrap;
+        color: aquamarine;
+    }
+}
