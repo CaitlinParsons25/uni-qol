@@ -4,14 +4,17 @@ var cityInfoCont = document.querySelector('#info-container');
 
 let urbanareaapi = ""
 let summary = ""
+var cityName = ""
 
 var CityFormHandler = function(event) {
   // prevent page from refreshing
   event.preventDefault();
   // get value from input element
   var city = CityInput.value.trim().toLowerCase();
+  cityName = city
   if (city) {
     getCityInfo(city);
+    getWeather()
     // clear old content
     cityInfoCont.textContent = '';
     CityInput.value = '';
@@ -55,7 +58,7 @@ fetch(urbanareaapi)
         response.json().then(function(data) {
         console.log(data.summary)
         summary = data.summary
-        cityInfoCont.innerHTML = summary        
+        cityInfoCont.innerHTML = summary       
         });
       } else {
         alert('Error: City Not Found');
@@ -70,7 +73,7 @@ fetch(urbanareaapi)
 CityForm.addEventListener('submit', CityFormHandler);
 
 
-var cityName = "Austin";
+// var cityName = document.getElementById("city").value;
 
 // day 1 variables
 var dayOneDate = document.getElementById("date1");
@@ -152,6 +155,6 @@ var getWeather = function () {
     });
 };
 
-getWeather();
+
 
 // weather API code ends

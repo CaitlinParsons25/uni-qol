@@ -4,47 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="./assets/css/style.css">
-    <title> Uni-QOL </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Quality of Life + Weather</title>
 </head>
 <body>
     <header>
-        <h1>CITY INFO!</h1>        
+        <h1>Quality of Life + Weather</h1>
     </header>
-        <div class="Input Field">
+        <!-- <div class="Input Field">
             <h3 class="card-header text-uppercase">Search For City!</h3>
             <form id="city-form">
                 <label for="city">City</label>
                 <input name="city" id="city" type="text" autofocus="true" class="form-input" />
                 <button type="submit" class="btn">Get City Information</button>
             </form>
-        </div>    
-        <div>
-            <h2 class="subtitle">City Summary: <span id="searched-city"></span></h2>
-            <div id="info-container" class="list-group">
-            </div>
-        </div>
-        
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Quality of Life + Weather</title>
-<body>
-    <header>
-        <h1>Quality of Life + Weather</h1>
-    </header>
+        </div>     -->
+
     <div class="container-all">
         <div class="form-container">
-            <form>
+            <form id="city-form">
                 <div class="form-content">
                     <h1>Please enter a city:</h1>
-                    <input placeholder="Los Angeles">
-                    <button type="submit" class="submit" id="submit">Search</button>
+                    <input name="city" id="city" type="text" autofocus="true" class="form-input" placeholder="Los Angeles">
+                    <button type="submit" class="btn" id="submit">Search</button>
                 </div>
             </form>
         </div>
         <div class="hidden search-response grid-x grid-padding-x align-spaced">
             <div class="qol-container cell small-12 medium-5 large-5">
-                <h2>Quality of Life</h2>
+                <h2 class="subtitle">Quality of Life: <span id="searched-city"></span></h2>
+                <div id="info-container" class="list-group">
+                </div>               
 
             </div>
             <div class="weather-container cell small-12 medium-5 large-5">
