@@ -164,3 +164,7 @@ var getHistory = function() {
 };
 
 getHistory();
+
+// background loop function
+var video = document.getElementById("video")
+video.loop = true
