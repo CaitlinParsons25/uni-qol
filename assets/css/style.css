@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url("../images/img-bg.jpg");
+    background-image: url("/assets/images/video.webm");
     background-size: cover;
     background-attachment: fixed;
     color: white;
