@@ -5,6 +5,15 @@ var enterInfo = document.querySelector("#enter");
 var hidden = document.querySelector("#hidden");
 var footer = document.querySelector("#footer")
 
+// add loaders
+var spinnerWrapperQol = document.querySelector("#spin-wrap-qol")
+var spinnerQol = document.createElement("div")
+spinnerQol.classList.add("spinner", "spinner:before", "spinner:after")
+spinnerWrapperQol.appendChild(spinnerQol)
+var spinnerWrapperWeather = document.querySelector("#spin-wrap-weather")
+var spinnerWeather = document.createElement("div")
+spinnerWeather.classList.add("spinner", "spinner:before", "spinner:after")
+spinnerWrapperWeather.appendChild(spinnerWeather)
 
 let urbanareaapi = ""
 let summary = ""
@@ -67,6 +76,7 @@ fetch(urbanareaapi)
     .then(function(response) {    
       if (response.ok) {
         console.log(response);
+        spinnerWrapperQol.style.display = "none"
         response.json().then(function(data) {
         console.log(data.summary)
         summary = data.summary
@@ -125,6 +135,7 @@ var getWeather = function () {
         if (response.ok) {
             return response.json().then(function(data) {
                 console.log(data);
+                spinnerWrapperWeather.style.display = "none"
                 // day 1
                 let date1 = moment(data.list[0].dt_txt).format("MMMM DD, YYYY");
                 dayOneDate.textContent = date1;
