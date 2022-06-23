@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
     <title>Quality of Life + Weather</title>
 </head>
 <body class="body">
-    <video autoplay loop muted id="background-video" preload="auto" poster="../images/img-bg.jpg">
+    <video autoplay loop muted id="background-video" preload="auto">
         <source id="video" src="./assets/images/video.webm" type="video/webm">
     </video>
     <header>
@@ -33,12 +33,14 @@
         <div class="hidden search-response grid-x grid-padding-x align-spaced" id="hidden">
             <div class="qol-container cell small-11 medium-10 large-5">
                 <h3 class="subtitle">Quality of Life <span id="searched-city"></span></h3>
+                <div class="spinner-wrapper" id="spin-wrap-qol"></div>
                 <div id="info-container" class="list-group">
-                </div>               
+                </div>
 
             </div>
             <div class="weather-container cell small-11 medium-10 large-5">
                 <h3>Weather</h3>
+                <div class="spinner-wrapper" id="spin-wrap-weather"></div>
                 <div class="day">
                     <h1 id="date1"></h1>
                     <p id="temp1-min"></p>
