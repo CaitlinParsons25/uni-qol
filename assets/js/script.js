@@ -120,7 +120,7 @@ var dayTwoCondition = document.getElementById("condition2");
 // get weather forecast function
 var getWeather = function () {
     // fetch api from OpenWeatherMap
-    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&cnt=5&appid=cbe5d9da9d040ae0db1e7af14bfcdcce"; 
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=cbe5d9da9d040ae0db1e7af14bfcdcce"; 
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             return response.json().then(function(data) {
@@ -128,16 +128,16 @@ var getWeather = function () {
                 // day 1
                 let date1 = moment(data.list[0].dt_txt).format("MMMM DD, YYYY");
                 dayOneDate.textContent = date1;
-                dayOneTempMin.textContent = "Low: " + (data.list[0].main.temp_min);
-                dayOneTempMax.textContent = "High: " + (data.list[0].main.temp_max);
+                dayOneTempMin.textContent = "Low: " + (data.list[3].main.temp_min) + "F";
+                dayOneTempMax.textContent = "High: " + (data.list[6].main.temp_max) + "F";
                 dayOneCondition.textContent = (data.list[0].weather[0].description);
 
                 // day 2
-                let date2 = moment(data.list[1].dt_txt).format("MMMM DD, YYYY");
+                let date2 = moment(data.list[7].dt_txt).format("MMMM DD, YYYY");
                 dayTwoDate.textContent = date2;
-                dayTwoTempMin.textContent = "Low: " + (data.list[1].main.temp_min);
-                dayTwoTempMax.textContent = "High: " + (data.list[1].main.temp_max); 
-                dayTwoCondition.textContent = (data.list[1].weather[0].description);
+                dayTwoTempMin.textContent = "Low: " + (data.list[11].main.temp_min) + "F";
+                dayTwoTempMax.textContent = "High: " + (data.list[14].main.temp_max) + "F"; 
+                dayTwoCondition.textContent = (data.list[7].weather[0].description);
 
                 // // day 3
                 // let date3 = moment(data.list[2].dt_txt).format("MMMM DD, YYYY");
